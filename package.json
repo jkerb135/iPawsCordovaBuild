@@ -1,7 +1,7 @@
 {
-  "name": "ipaws",
+  "name": "todo",
   "version": "1.0.0",
-  "description": "iPaws: An Ionic project",
+  "description": "todo: An Ionic project",
   "dependencies": {
     "gulp": "^3.5.6",
     "gulp-sass": "^0.7.1",
