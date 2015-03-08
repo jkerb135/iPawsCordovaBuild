@@ -1,0 +1,60 @@
+<ion-header-bar class="bar-calm">
+    <h1 class="title">{{taskName}}</h1>
+</ion-header-bar>
+<ion-view view-title="{{taskName}}">
+    <ion-content>
+        <ion-slide-box class="col col-100" show-pager="true" style="height:70%!important;">
+            <ion-slide>
+                <div class="col col-80" style="margin:0 auto">
+                    <div class="box">
+                        <h2 style="text-align: center">Necessary Items</h2>
+                        <div class="list">
+                            <ion-checkbox class="items_check checkbox-calm item-text-wrap" ng-repeat="item in requriedItems"
+                                          ng-model="item.checked"
+                                          ng-checked="item.checked"
+                                          ng-change="ableToStartTask()">
+                                {{ item.text }}
+                            </ion-checkbox>
+                        </div>
+                    </div>
+                </div>
+            </ion-slide>
+            <ion-slide>
+                <div class="col col-80" style="margin:0 auto">
+                    <div class="box">
+                        <h2 style="text-align: center">Your Progress</h2>
+                        <div class="list item-text-wrap">
+                            <ion-checkbox class="items_check checkbox-balanced item-text-wrap" ng-repeat="step in progression"
+                                          ng-disabled="true"
+                                          ng-model="item.checked"
+                                          ng-checked="step.checked"
+                                          ng-change="change()">
+                                {{ step.text }}
+                            </ion-checkbox>
+                        </div>
+                    </div>
+                </div>
+            </ion-slide>
+        </ion-slide-box>
+        <div class="row">
+            <div class="col col-50" style="margin:0 auto">
+                <div class="padding">
+                    <button class="button button-block button-calm disabled" id="startTask" ng-click="start()">
+                        Start Task
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </ion-content>
+</ion-view>
+<ion-footer-bar class="tabs tabs-icon-left tabs-calm">
+    <a class="tab-item pull-right" ng-click="home()">
+        <i class="icon ion-home"></i>
+        Home
+    </a>
+    <a class="tab-item" ng-click="clearSession()">
+        <i class="icon ion-log-out"></i>
+        Sign out
+    </a>
+</ion-footer-bar>

@@ -1,0 +1,26 @@
+<ion-header-bar class="bar-calm">
+    <h1 class="title">Main Menu</h1>
+</ion-header-bar>
+
+<ion-view view-title="Welcome" {{username}}>
+    <ion-content padding="true">
+        <button class="button button-block button-calm" ng-click="complete()">
+            View Your Tasks
+        </button>
+        <button class="button button-block button-calm" ng-click="">
+            Request A Task
+        </button>
+        </div>
+    </ion-content>
+</ion-view>
+
+<ion-footer-bar class="tabs tabs-icon-left tabs-calm">
+    <a class="tab-item pull-right" ng-click="home()">
+        <i class="icon ion-home"></i>
+        Home
+    </a>
+    <a class="tab-item" ng-click="clearSession()">
+        <i class="icon ion-log-out"></i>
+        Sign out
+    </a>
+</ion-footer-bar>

@@ -1,0 +1,60 @@
+body {
+    cursor: url('http://ionicframework.com/img/finger.png'), auto;
+}
+.wide-as-needed {
+    overflow: scroll;
+    white-space: nowrap;
+}
+
+input:disabled + .checkbox-icon:before {
+    border-color: green !important;
+}
+input:disabled:checked + .checkbox-icon:before {
+    background-color: green !important;
+}
+.slider {
+    height: 100%;
+}
+.text-center{
+    text-align: center;
+}
+.item-body{
+    text-align: center;
+    margin: 0 auto;
+}
+.item-body p{
+    text-align: left;
+    font-size: 1em;
+}
+.videogular-container {
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.videogular-container .audio {
+    width: 90%;
+    height: 50px;
+    margin: 10px auto;
+}
+
+.videogular-container .video {
+    width: 90%;
+    height: 50%;
+    margin: 10px auto;
+}
+
+@media (min-width: 1200px) {
+    .videogular-container .audio {
+        width: 50%;
+        height: 50px;
+        margin: 10px auto;
+    }
+
+    .videogular-container .video {
+        width: 50%;
+        height: 50%;
+
+    }
+
+}

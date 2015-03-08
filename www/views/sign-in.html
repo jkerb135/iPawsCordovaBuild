@@ -1,0 +1,24 @@
+<div class="responsive">
+    <ion-header-bar class="bar-calm">
+        <h1 class="title">Welcome - Please Sign In</h1>
+    </ion-header-bar>
+    <ion-view view-title="Sign-In">
+        <ion-content>
+            <div class="list">
+                <label class="item item-input">
+                    <span class="input-label">Username</span>
+                    <input type="text" ng-model="user.username">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Password</span>
+                    <input type="password" ng-model="user.password" value=" ">
+                </label>
+            </div>
+            <div class="padding">
+                <button class="button button-block button-calm" ng-click="login(user)">
+                    Sign-In
+                </button>
+            </div>
+        </ion-content>
+    </ion-view>
+</div>

@@ -1,0 +1,14 @@
+<ion-view view-title="Results">
+    <ion-content>
+        <ion-list class="list padding">
+            <li class="item"><strong >Name:</strong> {{name}}</li>
+            <li class="item"><strong>Task Name:</strong> {{taskName}}</li>
+            <li class="item"><strong>Helps Used:</strong> {{steps}}</li>
+            <li class="item"><strong>Total Time:</strong> {{time}}</li>
+        </ion-list>
+        <div class="buttons text-center">
+            <button class="button button-calm" ng-click="refreshTask()">Restart</button>
+            <button class="button button-calm" ng-click="done()">Done</button>
+        </div>
+    </ion-content>
+</ion-view>

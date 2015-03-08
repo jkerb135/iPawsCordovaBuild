@@ -1,0 +1,62 @@
+
+<ion-view view-title="{{taskName}}">
+    <ion-slide-box ng-init="disableSwipe()" on-slide-changed="slideChanged(index)" active-slide="slideIndex">
+        <ion-slide ng-repeat="(key, step) in mainsteps">
+            <ion-content>
+                <div class="list card">
+                    <div class="item item-icon-left item-text-wrap">
+                        <i class="icon">{{key + 1}}</i>
+                        <h2>{{step.mainStepName}}</h2>
+                        <p>{{getElapsedMs()}}</p>
+                    </div>
+
+                    <div class="item item-body">
+                        <div class="videogular-container">
+                            <videogular vg-theme="step.audio.theme.url" class="videogular-container audio">
+                                <vg-media vg-src="step.audio.source" vg-type="audio"></vg-media>
+
+                                <vg-controls>
+                                    <vg-play-pause-button></vg-play-pause-button>
+                                    <vg-time-display>{{ currentTime | date:'mm:ss' }}</vg-time-display>
+                                    <vg-scrub-bar>
+                                        <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+                                    </vg-scrub-bar>
+                                    <vg-time-display>{{ timeLeft | date:'mm:ss' }}</vg-time-display>
+                                    <vg-volume>
+                                        <vg-mute-button></vg-mute-button>
+                                    </vg-volume>
+                                </vg-controls>
+                            </videogular>
+
+                            <videogular vg-theme="step.video.theme.url" class="video">
+                                <vg-media vg-src="step.video.source"
+                                          vg-tracks="step.video.tracks"
+                                          vg-native-controls="true">
+                                </vg-media>
+                            </videogular>
+                        </div>
+                        <p>
+                            {{step.mainStepText}}
+                        </p>
+                    </div>
+
+                    <ion-item class="item tabs tabs-secondary tabs-icon-left" id="moreInfo" ng-click="toggleHelp(step)">
+                        <a class="tab-item" href="#">
+                            <i class="icon ion-help"></i>
+                            More Information
+                        </a>
+                    </ion-item>
+                    <ion-item ng-repeat="detail in step.detailedSteps" class="item item-thumbnail-left item-text-wrap" ng-show="isShown(step)">
+                        <img ng-src="{{detail.imagePath | trusted}}">
+                        <h2>{{detail.detailedStepName}}</h2>
+                        <p>{{detail.detailedStepText}}</p>
+                    </ion-item>
+                </div>
+                <div class="buttons text-center">
+                    <button class="button button-calm" ng-click="nextSlide()" ng-show="slideIndex != slideCount">Next</button>
+                    <button class="button button-calm" ng-click="finish()" ng-show="slideIndex == slideCount">Finish</button>
+                </div>
+            </ion-content>
+        </ion-slide>
+    </ion-slide-box>
+</ion-view>
