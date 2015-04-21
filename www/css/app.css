@@ -58,3 +58,7 @@ input:disabled:checked + .checkbox-icon:before {
     }
 
 }
+.strike_through {
+    text-decoration: line-through;
+    color: grey;
+}

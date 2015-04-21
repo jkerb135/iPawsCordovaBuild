@@ -46,10 +46,10 @@
                             More Information
                         </a>
                     </ion-item>
-                    <ion-item ng-repeat="detail in step.detailedSteps" class="item item-thumbnail-left item-text-wrap" ng-show="isShown(step)">
+                    <ion-item ng-repeat="detail in step.detailedSteps" class="item item-thumbnail-left item-text-wrap" ng-show="isShown(step)" ng-click="countStep()">
                         <img ng-src="{{detail.imagePath | trusted}}">
                         <h2>{{detail.detailedStepName}}</h2>
-                        <p>{{detail.detailedStepText}}</p>
+                        <p ng-click="usedDetailedStep($event)">{{detail.detailedStepText}}</p>
                     </ion-item>
                 </div>
                 <div class="buttons text-center">

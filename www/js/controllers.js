@@ -180,6 +180,8 @@ app.controller('DoTaskCtrl', function(Data, $scope, Api, $state, $rootScope, $co
         }
     };
 
+
+
     $scope.requriedItems = requirements
 
     if(requirements.length === 0){
